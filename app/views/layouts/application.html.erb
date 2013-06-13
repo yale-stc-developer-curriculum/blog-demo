@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YaleCasExample</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <% if current_user %>
+    <div id="user_info">Hello, <%= current_user.first_name %> <%= link_to "logout", log_out_path %></div>
+  <% else %>
+    <div id="user_info"> <%= link_to "Log In", log_in_path(return_to_controller: params[:controller] , return_to_action: params[:action]) %></div>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
