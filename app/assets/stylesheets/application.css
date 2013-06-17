@@ -31,4 +31,23 @@
 .post-content {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.post-author {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.comment {
+  margin: 15px;
+}
+
+.comment-content {
+  font-size: 14px;
+}
+
+.comment-author {
+  font-style: italic;
+  font-size: 14px;
 }

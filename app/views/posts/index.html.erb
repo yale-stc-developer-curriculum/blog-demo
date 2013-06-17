@@ -6,10 +6,6 @@
     <%= link_to 'Write a new post', new_post_path %>
   </div>
 
-  <% @posts.each do |post| %>
-  <div class="post">
-    <div class="post-title"><%= link_to post.title, post %></div>
-    <div class="post-content"><%= simple_format(post.content) %></div>
-  </div><% end %>
+  <%= render @posts.reverse %>
 
 </div>

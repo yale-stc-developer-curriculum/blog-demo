@@ -3,6 +3,7 @@ YaleCasExample::Application.routes.draw do
 
   resources :posts
   resources :users
+  resources :comments, only: [:create, :destroy]
 
   get '/log_in' => 'sessions#log_in', as: :log_in
   get '/log_out' => 'sessions#log_out', as: :log_out
