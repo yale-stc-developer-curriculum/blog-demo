@@ -8,6 +8,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @users.where("first_name like ?", "%#{params[:q]}%") }
+    end
   end
 
   # GET /users/1

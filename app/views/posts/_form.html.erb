@@ -9,7 +9,7 @@
   </div>
 
   <div class="field">
-    <%= f.association :users, label_method: :full_name, as: :check_boxes %>
+    <%= f.input :user_tokens, as: :text, label: "Authors", input_html: {data: {load: @post.users}} %>
   </div>
 
 
