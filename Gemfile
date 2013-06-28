@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rubycas-client-rails'
 gem 'rubycas-client', '2.2.1'
 
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'

@@ -1,25 +1,20 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@post) do |f| %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.input :title %>
   </div>
+
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.input :content %>
   </div>
+
+  <div class="field">
+    <%= f.association :users, label_method: :full_name, as: :check_boxes %>
+  </div>
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
+
 <% end %>
