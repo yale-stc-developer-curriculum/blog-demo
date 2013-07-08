@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'quiet_assets'
 #authentication
 gem 'rubycas-client-rails'
 gem 'rubycas-client', '2.2.1'

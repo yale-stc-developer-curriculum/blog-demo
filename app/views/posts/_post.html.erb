@@ -9,7 +9,7 @@
 
   <div class="new-comment">
     Add a new comment:
-    <%= form_for Comment.new do |f| %>
+    <%= form_for Comment.new, method: :post do |f| %>
       <p><%= f.text_area :content %></p>
       <p><%= f.hidden_field :post_id, value: post.id %></p>
       <p><%= f.submit %></p>
