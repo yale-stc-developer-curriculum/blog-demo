@@ -3,7 +3,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.save
-    redirect_to @comment.post
+    respond_to do |format|
+      format.html { redirect_to @comment.post }
+      format.js { render 'create' } #create.js.erb
+    end
   end
 
   def destroy
