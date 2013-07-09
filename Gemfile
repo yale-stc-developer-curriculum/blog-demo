@@ -6,6 +6,9 @@ ruby "1.9.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
+# use unicorn as web server
+gem 'unicorn'
+
 # Don't show asset requests in dev log
 gem 'quiet_assets'
 
