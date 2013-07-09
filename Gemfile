@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# specify ruby version for heroku
+ruby "1.9.3"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
@@ -17,7 +20,10 @@ gem 'rubycas-client', '2.2.1'
 gem 'simple_form'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+
+# Use postgres as the database for heroku
+gem 'pg', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
