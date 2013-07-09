@@ -1,21 +1,29 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.0'
 
+# support for heroku logging
+gem 'rails_12factor', group: :production
+
+# Use postgres as the database for Active Record / Heroku
+gem 'pg'
+
+# don't show asset requests in dev log
 gem 'quiet_assets'
+
+# show nicer errors
+gem 'better_errors'
+
 #authentication
 gem 'rubycas-client-rails'
 gem 'rubycas-client', '2.2.1'
 
 gem 'simple_form'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
