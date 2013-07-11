@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130617145647) do
+ActiveRecord::Schema.define(version: 20130711190352) do
+
+  create_table "advertisements", force: true do |t|
+    t.string  "name"
+    t.decimal "price"
+  end
 
   create_table "comments", force: true do |t|
     t.text     "content"

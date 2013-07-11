@@ -3,7 +3,7 @@ require 'spec_helper'
 describe UsersController, focus: true do
   before(:each) do
     @user = FactoryGirl.create(:user)
-    controller.stub(:current_user)
+    controller.stub(:current_user).and_return(@user)
   end
 
   describe 'GET index' do
