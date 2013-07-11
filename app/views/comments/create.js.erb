@@ -1,2 +1,8 @@
 $('#comment_content').val('')
 $('.comments').append('<%= j(render @comment) %>')
+
+$('#<%= j dom_id(@comment) %>').highlight({color: '#ff0000'})
+
+$('.notice').remove()
+$('span.comment_prompt').after("<div class='notice success'>Comment sucessfully added</div>")
+$('.notice').fadeOut(4000)

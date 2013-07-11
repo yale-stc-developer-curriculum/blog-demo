@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require token-input-facebook
+ *= require jquery.ui.all
  *= require_tree .
  */
 #user_info  {
@@ -56,4 +57,14 @@
 .comment-author {
   font-style: italic;
   font-size: 14px;
+}
+
+.notice {
+  padding: 5px;
+  border: 1px solid black;
+  width: 400px;
+  }
+
+.success {
+  background-color: #99FF66;
 }

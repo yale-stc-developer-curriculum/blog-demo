@@ -11,7 +11,7 @@
 
   <% if render_comments %>
     <div class="new-comment">
-      Add a new comment:
+      <span class="comment_prompt">Add a new comment:</span>
       <%= form_for Comment.new, remote: true, method: :post do |f| %>
         <p><%= f.text_area :content %></p>
         <p><%= f.hidden_field :post_id, value: post.id %></p>

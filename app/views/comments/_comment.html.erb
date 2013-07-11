@@ -1,4 +1,4 @@
-<div class="comment">
+<div class="comment" id="<%= dom_id(comment) %>" >
   <div class="comment-content"><%= comment.content %></div>
   <div class="comment-author">Commented by: <%= link_to comment.user.full_name, comment.user %></div>
   <% if current_user == comment.user %>

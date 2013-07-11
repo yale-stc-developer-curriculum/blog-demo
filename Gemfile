@@ -8,7 +8,11 @@ gem 'rails', '4.0.0'
 gem 'rails_12factor', group: :production
 
 # Use postgres as the database for Active Record / Heroku
-gem 'pg'
+gem 'pg', group: :production
+gem 'sqlite3', group: :development
+
+# use unicorn as our web server
+gem 'unicorn'
 
 # don't show asset requests in dev log
 gem 'quiet_assets'
@@ -36,6 +40,7 @@ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
