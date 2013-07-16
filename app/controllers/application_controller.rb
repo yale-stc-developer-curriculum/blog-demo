@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action RubyCAS::Filter
+  before_action RubyCAS::Filter unless Rails.env.test?
   before_action :current_user
   helper_method :current_user
 
