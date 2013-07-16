@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby "1.9.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '4.0.0'
 
 # use unicorn as web server
 gem 'unicorn'
@@ -15,12 +15,13 @@ gem 'quiet_assets'
 # For Heroku
 gem 'rails_12factor', group: :production
 
-#authentication
+# authentication
 gem 'rubycas-client-rails'
 gem 'rubycas-client', '2.2.1'
 
+
 # Cleaner forms
-gem 'simple_form'
+gem 'simple_form', '3.0.0.rc'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
@@ -29,7 +30,10 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'sass-rails', '~> 4.0.0'
+
+# Use Twitter Bootstrap for layout
+gem 'bootstrap-sass'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

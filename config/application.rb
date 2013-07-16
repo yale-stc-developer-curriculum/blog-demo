@@ -21,5 +21,7 @@ module YaleCasExample
     # config.i18n.default_locale = :de
     config.rubycas.cas_base_url = 'https://secure.its.yale.edu/cas/'
 
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
   end
 end

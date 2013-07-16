@@ -1,20 +1,8 @@
-<%= simple_form_for(@post) do |f| %>
+<%= simple_form_for(@post, :html => { :class => 'form-vertical' }) do |f| %>
 
-  <div class="field">
     <%= f.input :title %>
-  </div>
-
-  <div class="field">
     <%= f.input :content %>
-  </div>
-
-  <div class="field">
     <%= f.input :user_tokens, as: :text, label: "Authors", input_html: {data: {load: @post.users}} %>
-  </div>
-
-
-  <div class="actions">
     <%= f.button :submit %>
-  </div>
 
 <% end %>

@@ -1,0 +1,40 @@
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
+
+# Use Twitter Bootstrap for layout
+gem 'bootstrap-sass'
+
+# in terminal (since we updated versions of sass-rails)
+bundle update
+
+# in  config/application.rb (inside Application Class)
+config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+# Edit application.js to load Bootstrap JS
+//= require bootstrap
+
+# rename applicaiton.css so we can use SASS (using terminal)
+mv app/assets/stylesheets/application.css app/assets/stylesheets/application.css.scss
+
+# edit application.css.scss
+# we use this instead of //require so we can use mixins in our css
+@import "bootstrap";
+
+# remove scaffold css, we won't use it
+rm app/views/scaffolds.css.scss
+
+# Edit application.css.scss
+/*
+ *= require_self
+ *= require token-input-facebook
+ *= require_tree .
+ */
+
+@import "bootstrap_and_overrides";
+
+@import 'layouts/*';
+@import 'posts/*';
+
+# Next, remove all the *.css.scss files that are empty
+# rm app/assets/stylesheets/users.css.scss  etc
+
