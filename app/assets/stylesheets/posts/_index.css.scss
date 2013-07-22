@@ -1,37 +1,47 @@
+@mixin rounded-border($border-color, $radius: 10px) {
+  moz-border-radius: $radius;
+  webkit-border-radius: $radius;
+  border-radius: $radius;
+  border: 1px solid $border-color;
+}
+
 .post {
+  @include rounded-border($radius: 20px, $border-color: $theme1;)
   margin-top: 10px;
   padding: 10px;
-  width: 800px;
+  width: fluidize(800px, 1000px);
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .author {
+    font-size: 12px;
+    font-style: italic;
+  }
 }
 
-.post-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.post-content {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.post-author {
-  font-size: 12px;
-  font-style: italic;
-}
 
 .comment {
+  @include rounded-border($border-color: $theme1);
   width: 400px;
   padding: 5px;
   margin-bottom: 10px;
-  border: 1px solid black;
+  .body {
+    font-size: 14px;
+  }
+
+  .author {
+    font-style: italic;
+    font-size: 14px;
+  }
 }
 
-.comment-content {
-  font-size: 14px;
-}
-
-.comment-author {
-  font-style: italic;
-  font-size: 14px;
+.note {
+  @extend .comment;
+  background-color: red;
 }

@@ -1,21 +1,22 @@
 <% render_comments ||= false %>
 
+
 <div class="post">
-  <div class="post-title"><%= link_to post.title, post %></div>
-  <div class="post-author">Posted by:
+  <div class="title"><%= link_to post.title, post %></div>
+  <div class="author">Posted by:
     <% post.users.each do |user| %>
       <%= link_to user.full_name, user %>
     <% end %>
   </div>
-  <div class="post-content"><%= simple_format(post.content) %></div>
+  <div class="body"><%= simple_format(post.content) %></div>
 
   <% if render_comments %>
     <div class="new-comment">
       Add a new comment:
-      <%= form_for Comment.new, remote: true, method: :post do |f| %>
-        <p><%= f.text_area :content %></p>
-        <p><%= f.hidden_field :post_id, value: post.id %></p>
-        <p><%= f.submit %></p>
+      <%= simple_form_for Comment.new, remote: true, method: :post do |f| %>
+        <p><%= f.input :content %></p>
+        <p><%= f.input :post_id, as: :hidden, input_html: {value: post.id} %></p>
+        <p><%= f.button :submit %></p>
       <% end %>
     </div>
     <div class="comments">
